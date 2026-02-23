@@ -1,0 +1,28 @@
+package src;
+
+import java.util.Scanner;
+
+import src.models.ListaTarefas;
+import src.models.Tarefa;
+
+public class Main {
+    public static void main(String args[]) {
+	/*
+	  Loop para receber comandos:
+	  -> adicionar tarefa
+	  -> listar tarefas
+	  -> atualizar tarefa
+	  -> deletar tarefa
+	 */
+
+	ListaTarefas Lista = new ListaTarefas();
+	
+	Scanner sc = new Scanner(System.in);
+	
+	while(true) {
+	    String entrada = sc.next();
+	    
+	    
+	}
+    }
+}
