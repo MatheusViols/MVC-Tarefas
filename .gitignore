@@ -25,3 +25,7 @@ replay_pid*
 
 #Arquivos de backup do editor
 *~
+./src/*~
+./src/models/*~
+./src/views/*~
+./src/controllers/*~

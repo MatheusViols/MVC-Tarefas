@@ -1,15 +1,17 @@
-package src.view;
+package src.views;
 
 import java.util.Scanner;
 import java.util.List;
 
-import src.controller.TarefaController;
+import src.controllers.TarefaController;
 
 public class TarefaView {
     private final Scanner sc;
+    private final TarefaController controller;
 
-    public TarefaView() {
+    public TarefaView(TarefaController controller) {
 	this.sc = new Scanner(System.in);
+	this.controller = controller;
     }
     
     public Boolean mainView() {
@@ -23,10 +25,10 @@ public class TarefaView {
 	    mostrarAjuda();
 	    break;
 	case "add":
-	    postTarefa();
+	    postRequest();
 	    break;
 	case "list":
-	    mostrarTarefas();
+	    getRequest();
 	    break;
 	// case "att":
 	//     putTarefa();
@@ -54,19 +56,19 @@ public class TarefaView {
 
     public void mostrarTarefas(List tarefas) {
 	tarefas.forEach((tarefa) -> {
-		System.out.printf("Nome: %s\nCompleta: %b\n\n");
+		System.out.println(tarefa.toString());
 	    });
     }
     
     public void getRequest() {
-	List response = TarefaController.getHandler();
+	List response = this.controller.getHandler();
 	mostrarTarefas(response);
     }
 
     public void postRequest() {
 	System.out.printf("Nome da tarefa:\n-> ");
 	String nomeTarefa = this.sc.next();
-	TarefaController.postHandler(nomeTarefa);
+	this.controller.postHandler(nomeTarefa);
     }
     
     // public void putRequest() {

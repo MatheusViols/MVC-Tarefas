@@ -11,11 +11,14 @@ import src.models.Tarefa;
 
 public class Main {
     public static void main(String args[]) {
+	TarefaController controller = new TarefaController();
 	
-	ListaTarefas Lista = new ListaTarefas();
-	TarefaView view = new TarefaView();
+	ListaTarefas lista = new ListaTarefas();
+	TarefaView view = new TarefaView(controller);
 
-	TarefaController controller = new TarefaController(Lista, view);
+	controller.setLista(lista);
+	controller.setView(view);
+
 	while(true) {
 	    Boolean continuar = controller.ciclo();
 	    if(!continuar) {

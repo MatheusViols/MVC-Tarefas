@@ -4,17 +4,19 @@ import java.util.List;
 
 import src.views.TarefaView;
 
-import src.models.ListaTarefa;
+import src.models.ListaTarefas;
 import src.models.Tarefa;
 
 
 public class TarefaController {
-    private ListaTarefa lista;
+    private ListaTarefas lista;
     private TarefaView view;
 
-    public TarefaController(ListaTarefa listaTarefa, TarefaView view) {
-	this.lista = listaTarefa;
-	this.view = tarefaView;
+    public void setLista(ListaTarefas lista) {
+	this.lista = lista;
+    }
+    public void setView(TarefaView view) {
+	this.view = view;
     }
     
     public Boolean ciclo(){
@@ -22,11 +24,11 @@ public class TarefaController {
 	return continuar;
     }
     
-    static public List getHandler() {
+    public List getHandler() {
 	List response = this.lista.getTarefas();
 	return response;
     }
-    static public void postHandler(String nomeTarefa) {
+    public void postHandler(String nomeTarefa) {
 	this.lista.adicionarTarefa(new Tarefa(nomeTarefa));
     }
     
