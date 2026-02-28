@@ -7,45 +7,25 @@ import src.controllers.TarefaController;
 
 public class TarefaView {
     private final Scanner sc;
-    private final TarefaController controller;
 
-    public TarefaView(TarefaController controller) {
+    public TarefaView() {
 	this.sc = new Scanner(System.in);
-	this.controller = controller;
     }
     
-    public Boolean mainView() {
-	Boolean continuar = true;
-
+    public String mainView() {
 	System.out.printf("Tarefas $ ");
 	String entrada = this.sc.next();
 
-	switch(entrada){
-	case "help":
-	    mostrarAjuda();
-	    break;
-	case "add":
-	    postRequest();
-	    break;
-	case "list":
-	    getRequest();
-	    break;
-	// case "att":
-	//     putTarefa();
-	//     break;
-	// case "del":
-	//     deleteTarefa();
-	//     break;
-	case "quit":
-	    continuar = false;
-	    break;
-	default:
-	    System.out.println("Comando não encontrado");
-	}
-	
-	return continuar;
+	return entrada;
     }
 
+    public String inputNomeTarefa() {
+	System.out.printf("Nome da tarefa:\n");
+	this.sc.nextLine();
+	String nomeTarefa = this.sc.nextLine();
+	return nomeTarefa;
+    }
+    
     public void mostrarAjuda() {
 	System.out.println("add para adicionar tarefa\n" +
 			   "list para listar tarefas\n" +
@@ -59,27 +39,8 @@ public class TarefaView {
 		System.out.println(tarefa.toString());
 	    });
     }
-    
-    public void getRequest() {
-	List response = this.controller.getHandler();
-	mostrarTarefas(response);
+
+    public void mostrarMensagem(String mensagem) {
+	System.out.println(mensagem);
     }
-
-    public void postRequest() {
-	System.out.printf("Nome da tarefa:\n-> ");
-	String nomeTarefa = this.sc.next();
-	this.controller.postHandler(nomeTarefa);
-    }
-    
-    // public void putRequest() {
-    // 	String nomeTarefa = this.sc.next();
-    // 	TarefaController.putHandler(nomeTarefa);
-    // }
-
-    // public void delRequest() {
-    // 	String nomeTarefa = this.sc.next();
-    // 	TarefaController.delHandler(nomeTarefa);
-    // }
-
-
 }

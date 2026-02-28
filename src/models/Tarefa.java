@@ -1,12 +1,28 @@
 package src.models;
 
-public record Tarefa(String nome, Boolean status) {
+public class Tarefa {
+    private String nome;
+    private boolean completa;
+
     public Tarefa(String nome) {
-	this(nome, false);
+	this.nome = nome;
+	this.completa = false;
+    }
+
+    public String getNome() {
+	return this.nome;
+    }
+    public boolean getStatus() {
+	return this.completa;
+    }
+
+    public void setStatus() {
+	this.completa = !this.completa;
     }
 
     public String toString() {
-	return String.format("Nome: %s\nStatus: %b\n", nome, status); 
+	String status = this.completa ? "Completa" : "Pendente";
+	return String.format("Nome: %s\nStatus: %s\n", nome, status);
     }
     
 	
