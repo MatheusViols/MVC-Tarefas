@@ -1,11 +1,10 @@
-package src.controllers;
+package com.exemplo.tarefas.controllers;
 
 import java.util.List;
 
-import src.views.TarefaView;
-
-import src.models.ListaTarefas;
-import src.models.Tarefa;
+import com.exemplo.tarefas.views.TarefaView;
+import com.exemplo.tarefas.models.ListaTarefas;
+import com.exemplo.tarefas.models.Tarefa;
 
 
 public class TarefaController {

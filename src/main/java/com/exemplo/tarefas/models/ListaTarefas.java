@@ -1,4 +1,4 @@
-package src.models;
+package com.exemplo.tarefas.models;
 
 import java.util.ArrayList;
 import java.util.List;

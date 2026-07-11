@@ -1,10 +1,8 @@
-package src;
+package com.exemplo.tarefas;
 
-import src.controllers.TarefaController;
-
-import src.views.TarefaView;
-
-import src.models.ListaTarefas;
+import com.exemplo.tarefas.controllers.TarefaController;
+import com.exemplo.tarefas.views.TarefaView;
+import com.exemplo.tarefas.models.ListaTarefas;
 
 public class Main {
     public static void main(String args[]) {

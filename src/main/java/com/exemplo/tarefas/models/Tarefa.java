@@ -1,4 +1,4 @@
-package src.models;
+package com.exemplo.tarefas.models;
 
 public class Tarefa {
     private String nome;

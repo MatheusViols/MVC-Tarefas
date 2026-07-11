@@ -1,9 +1,9 @@
-package src.views;
+package com.exemplo.tarefas.views;
 
 import java.util.Scanner;
 import java.util.List;
 
-import src.controllers.TarefaController;
+import com.exemplo.tarefas.controllers.TarefaController;
 
 public class TarefaView {
     private final Scanner sc;
